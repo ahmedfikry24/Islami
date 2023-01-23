@@ -16,6 +16,9 @@
             android:name=".QuranDetails"
             android:exported="false" />
         <activity
+            android:name=".HadethDetails"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

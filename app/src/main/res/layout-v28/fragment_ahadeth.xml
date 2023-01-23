@@ -1,13 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.AhadethFragment">
+    tools:context=".fragments.AhadethFragment"
+    android:background="@drawable/background_light_mode"
+    >
+
+    <ImageView
+        android:id="@+id/ahadeth_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHeight_percent=".3"
+        android:src="@drawable/hadeth_logo"/>
+    <View
+        android:id="@+id/top_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        app:layout_constraintTop_toBottomOf="@id/ahadeth_logo"
+        android:background="@color/primary_light_color"
+        android:layout_marginTop="15dp"
+        />
 
     <TextView
+        android:id="@+id/ahadeth_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_line"
+        android:layout_marginVertical="10dp"
+        android:text="الاحاديث"
+        android:textColor="@color/text_light_color"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        />
+    <View
+        android:id="@+id/botton_line"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="3dp"
+        app:layout_constraintTop_toBottomOf="@id/ahadeth_title"
+        android:background="@color/primary_light_color"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ahadeth_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/botton_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/ahadeth_item_recylcer"
+        />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

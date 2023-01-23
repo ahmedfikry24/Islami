@@ -27,6 +27,7 @@ class QuranDetails : AppCompatActivity() {
         suraName.text = sura_Name
         readFile(fileName)
         content.text = initialContent
+        initLisnters()
 
     }
 
