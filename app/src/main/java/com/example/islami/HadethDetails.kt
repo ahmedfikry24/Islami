@@ -44,14 +44,12 @@ class HadethDetails : AppCompatActivity() {
     fun readFile(fileName: String) {
         val bufferedReader: BufferedReader =
             BufferedReader(InputStreamReader(assets.open(fileName)))
-        val lines = bufferedReader.lines().toList()
-
+        var lines = bufferedReader.lines().toList()
+        titleContent = lines[0]
         for (i in 0..lines.size - 1) {
-            if (i < 1) {
-                titleContent = lines[i]
+            if (i > 0) {
+                initialContent += lines[i]
             }
-            initialContent += lines[i]
-
         }
     }
 }
