@@ -3,11 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.AhadethFragment">
 
+   <ImageView
+       android:id="@+id/radio_image"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginTop="100dp"
+       android:src="@drawable/radio_image"
+       />
     <TextView
+        android:id="@+id/radio_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_image"
+        android:text="اذاعة القرأن الكريم"
+        android:textSize="24sp"
+        android:textColor="@color/text_light_color"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        />
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radio_text"
+        android:orientation="horizontal"
+        android:layout_marginTop="60dp"
+        >
+        <ImageView
+            android:id="@+id/ic_before"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_before"
+            android:layout_marginStart="130dp"
+            />
+        <ImageView
+            android:id="@+id/ic_pause"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/baseline_pause_circle_24"
+            android:layout_marginStart="20dp"
+            />
+        <ImageView
+            android:id="@+id/ic_after"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_forward"
+            android:layout_marginStart="20dp"
+            />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
