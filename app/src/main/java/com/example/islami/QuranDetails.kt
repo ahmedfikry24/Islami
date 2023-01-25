@@ -47,7 +47,7 @@ class QuranDetails : AppCompatActivity() {
             BufferedReader(InputStreamReader(assets.open(fileName)))
         val lines = bufferedReader.lines().toList()
       for ( i in 0.. lines.size -1){
-          initialContent += lines[i] + "(${i+1})"
+          initialContent += lines[i] + "(${i+1}) "
       }
     }
 }

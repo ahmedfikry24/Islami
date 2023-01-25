@@ -14,13 +14,17 @@ class HadethDetails : AppCompatActivity() {
     lateinit var back: ImageView
     lateinit var hadeth: TextView
     var initialContent: String = ""
+    var titleContent: String = ""
+    lateinit var title: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hadeth_details)
         init()
-        val HadethFileName: String = "h${position + 1}.txt"
+        val HadethFileName = "h${position + 1}.txt"
         readFile(HadethFileName)
+        hadeth.text = initialContent
+        title.text = titleContent
         initLisnters()
     }
 
@@ -28,6 +32,7 @@ class HadethDetails : AppCompatActivity() {
         position = intent.getIntExtra("position", 0)
         hadeth = findViewById(R.id.hadeth_contect)
         back = findViewById(R.id.hadeth_backArrow)
+        title = findViewById(R.id.hadeth_title)
     }
 
     fun initLisnters() {
@@ -40,9 +45,13 @@ class HadethDetails : AppCompatActivity() {
         val bufferedReader: BufferedReader =
             BufferedReader(InputStreamReader(assets.open(fileName)))
         val lines = bufferedReader.lines().toList()
+
         for (i in 0..lines.size - 1) {
+            if (i < 1) {
+                titleContent = lines[i]
+            }
             initialContent += lines[i]
-            println(initialContent)
+
         }
     }
 }
